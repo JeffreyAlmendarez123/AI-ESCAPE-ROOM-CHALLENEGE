@@ -2,7 +2,7 @@
 # CMP 131 - AI ESCAPE ROOM CHALLENGE
 # ================================================================
 # Team members:
-# Date:
+# Date:jeffrey Almendarez, James, Marvin
 #
 # STORY:
 # C.O.D.E., the classroom AI, accidentally locked the virtual lab.
@@ -37,7 +37,16 @@ print("Enter the correct code to unlock the door.")
 correct_code = 131
 door_status = "locked"
 attempts = 0
-
+while door_status=="locked":
+    code=int(input("Enter the access code"))
+    attempts=attempts+1     
+   
+    if code== correct_code:
+     print("UNLOCKED")
+     door_status = "unlocked"
+    elif code!= correct_code:
+     print ("Wrong code, try again")
+print(f"It took you {attempts} attempts.")
 # TODO 4:
 # Create a while loop that repeats while the door is "locked".
 # Inside the loop:
@@ -61,8 +70,10 @@ print("A safe temperature is from 50 through 99.")
 
 # The first temperature input is provided.
 temperature = int(input("Enter the system temperature: "))
-
-# TODO 7:
+while temperature>=100:
+    print("WARNING:SYSTEM OVERHEATING")
+    temperature=int(input("Lower the temperature and re-enter"))
+    print("Temperature Normal")
 # Create a while loop that repeats when the temperature is unsafe.
 # A temperature is unsafe when it is below 50 OR 100 or higher.
 # Inside the loop:
@@ -82,8 +93,10 @@ print("Choose: scan, shutdown, or share")
 
 # The first security choice is provided.
 choice = input("Enter your choice: ").lower()
-
-# TODO 10:
+while choice!="scan" and choice!= "shutdown" and choice!= "share":
+    print("That isn't one of the three options, try again.")
+    choice=input("Please enter scan, shutdown, or share").lower()
+# TODO
 # Create a while loop that repeats when the choice is not valid.
 # Inside the loop:
 #   1. Display a friendly invalid-choice message.
@@ -94,7 +107,12 @@ choice = input("Enter your choice: ").lower()
 # message for scan, shutdown, and share.
 # The share message must remind the player not to share passwords
 # or private information with AI.
-
+if choice=="scan":
+    print("scanning the system, no viruses found")
+elif choice=="shutdown":
+    print("Shutting down safely. Goodnight")
+else:
+    print("Never share your information with AI")
 
 # ----------------------- FINAL ESCAPE ----------------------------
 
